@@ -1,0 +1,14 @@
+node_modules/
+dist/
+package/
+.npm-cache/
+
+*.tgz
+npm-debug.log*
+
+.DS_Store
+.vscode/
+
+.env
+.env.*
+!.env.example

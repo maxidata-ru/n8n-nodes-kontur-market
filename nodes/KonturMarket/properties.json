@@ -1,0 +1,5093 @@
+[
+  {
+    "displayName": "Resource",
+    "name": "resource",
+    "type": "options",
+    "noDataExpression": true,
+    "options": [
+      {
+        "name": "Акты",
+        "value": "Акты",
+        "description": ""
+      },
+      {
+        "name": "Чеки С Кассы",
+        "value": "Чеки С Кассы",
+        "description": ""
+      },
+      {
+        "name": "Контрагенты",
+        "value": "Контрагенты",
+        "description": ""
+      },
+      {
+        "name": "Клиенты",
+        "value": "Клиенты",
+        "description": ""
+      },
+      {
+        "name": "Организации",
+        "value": "Организации",
+        "description": ""
+      },
+      {
+        "name": "Группы Каталога Товаров",
+        "value": "Группы Каталога Товаров",
+        "description": ""
+      },
+      {
+        "name": "Остатки Товаров",
+        "value": "Остатки Товаров",
+        "description": ""
+      },
+      {
+        "name": "Товары Услуги И Блюда",
+        "value": "Товары Услуги И Блюда",
+        "description": ""
+      },
+      {
+        "name": "Акции",
+        "value": "Акции",
+        "description": ""
+      },
+      {
+        "name": "Торговые Точки",
+        "value": "Торговые Точки",
+        "description": ""
+      },
+      {
+        "name": "Накладные",
+        "value": "Накладные",
+        "description": ""
+      },
+      {
+        "name": "Акцизные Марки",
+        "value": "Акцизные Марки",
+        "description": ""
+      },
+      {
+        "name": "Очередь Акцизных Марок",
+        "value": "Очередь Акцизных Марок",
+        "description": ""
+      },
+      {
+        "name": "Журнал Учета Продаж",
+        "value": "Журнал Учета Продаж",
+        "description": ""
+      },
+      {
+        "name": "Чеки В УТМ",
+        "value": "Чеки В УТМ",
+        "description": ""
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Acts Get Write Off Acts",
+        "value": "Acts Get Write Off Acts",
+        "action": "Получить акты списания за период",
+        "description": "Метод позволяет получить товароучетные акты списания торговой точки за период. Возвращает не черновики и не удаленные акты списания, отсортированные в порядке возрастания даты акта",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/write-off-acts"
+          }
+        }
+      },
+      {
+        "name": "Acts Get Write Off Act",
+        "value": "Acts Get Write Off Act",
+        "action": "Получить акт списания по идентификатору",
+        "description": "Метод позволяет получить товароучетный акт списания по его идентификатору. Возвращает только проведенные акты списания",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/write-off-acts/{{$parameter[\"actId\"]}}"
+          }
+        }
+      },
+      {
+        "name": "Acts Get Charge On Acts",
+        "value": "Acts Get Charge On Acts",
+        "action": "Получить акты постановки за период",
+        "description": "Метод позволяет получить товароучетные акты постановки торговой точки за период. Возвращает не черновики и не удаленные акты постановки, отсортированные в порядке возрастания даты акта",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/charge-on-acts"
+          }
+        }
+      },
+      {
+        "name": "Acts Get Charge On Act",
+        "value": "Acts Get Charge On Act",
+        "action": "Получить акт постановки по идентификатору",
+        "description": "Метод позволяет получить товароучетный акт постановки по его идентификатору. Возвращает только проведенные акты постановки",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/charge-on-acts/{{$parameter[\"actId\"]}}"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Cheques Get Cheques",
+        "value": "Cheques Get Cheques",
+        "action": "Получить чеки с кассы за период",
+        "description": "Метод позволяет получить список чеков с касс в торговой точке за период. Возвращает все чеки с касс в торговой точке, отсортированные в порядке возрастания даты и времени закрытия чека.",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/cheques"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Контрагенты"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Contractors Get Contractors",
+        "value": "Contractors Get Contractors",
+        "action": "Получить список контрагентов",
+        "description": "Метод позволяет получить список контрагентов (поставщиков и получателей накладных) с реквизитами",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/contractors"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Customers Get Customers",
+        "value": "Customers Get Customers",
+        "action": "Получить список клиентов",
+        "description": "Метод позволяет получить список клиентов организации. Сортировка по дате и времени создания.",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/organizations/{{$parameter[\"organizationId\"]}}/customers"
+          }
+        }
+      },
+      {
+        "name": "Customers Get Customer",
+        "value": "Customers Get Customer",
+        "action": "Получить клиента по идентификатору",
+        "description": "Метод позволяет получить клиента организации по его идентификатору.",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/organizations/{{$parameter[\"organizationId\"]}}/customers/{{$parameter[\"customerId\"]}}"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Организации"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Получить список организаций",
+        "value": "Organizations Get Organizations",
+        "action": "Получить список организаций",
+        "description": "Метод позволяет получить список организаций, доступных по api-key. Сортировка в алфавитном порядке по значению идентификатора организации",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/organizations"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Группы Каталога Товаров"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Product Groups Get Groups",
+        "value": "Product Groups Get Groups",
+        "action": "Получить группы каталога товаров",
+        "description": "Метод позволяет получить список товарных групп каталога. Список не сортированный",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/product-groups"
+          }
+        }
+      },
+      {
+        "name": "Product Groups Get Group",
+        "value": "Product Groups Get Group",
+        "action": "Получить группу каталога по идентификатору",
+        "description": "Метод позволяет получить товарную группу каталога по идентификатору. Список не сортированный",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/product-groups/{{$parameter[\"groupId\"]}}"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Остатки Товаров"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Product Rests Get Rests",
+        "value": "Product Rests Get Rests",
+        "action": "Получить остатки товаров на текущий момент времени",
+        "description": "Метод позволяет получить список идентификаторов неудаленных товаров со значениями товароучетных остатков на момент времени запроса.\nМетод возвращает только те товары, по которым были документы (накладные и акты), влияющие на изменение остатка. Если метод не вернул информацию об остатке товара, значит остаток у товара равен 0.",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/product-rests"
+          }
+        }
+      },
+      {
+        "name": "Product Rests Change Product Rests",
+        "value": "Product Rests Change Product Rests",
+        "action": "Изменить остаток товара/блюда",
+        "description": "Метод позволяет изменить остаток для товаров или блюда.\nМетод возвращает ID созданного акта постановки или списания в зависимости от того, увеличивается или уменьшается остаток.",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/product-rests"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Products Get Products",
+        "value": "Products Get Products",
+        "action": "Получить список товаров, услуг и блюд",
+        "description": "Метод позволяет получить список товаров, услуг и блюд. Список не сортированный.\nВнимание: в документации под «товарами» часто понимается в том числе услуги и блюда.",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/products"
+          }
+        }
+      },
+      {
+        "name": "Products Create Product",
+        "value": "Products Create Product",
+        "action": "Создать товар или услугу",
+        "description": "Метод позволяет создать товары и услуги. Если товар или услуга создается в одной из торговых точек с настроенным общим\nкаталогом - в других торговых точках товар или услуга создается автоматически с идентичным `productId` и `code`",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/products"
+          }
+        }
+      },
+      {
+        "name": "Products Get Product",
+        "value": "Products Get Product",
+        "action": "Получить товар, услугу, блюдо по идентификатору",
+        "description": "Метод позволяет получить товар, услугу или блюдо по идентификатору.\nВнимание: в документации под «товарами» часто понимается в том числе услуги и блюда.",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/products/{{$parameter[\"productId\"]}}"
+          }
+        }
+      },
+      {
+        "name": "Products Update Product",
+        "value": "Products Update Product",
+        "action": "Изменить товар, услугу, блюдо",
+        "description": "Метод позволяет изменить товар, услугу или блюдо.\nИзменить можно одно или несколько полей, для этого в теле запроса нужно передать изменяемое поле и новое значение.",
+        "routing": {
+          "request": {
+            "method": "PATCH",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/products/{{$parameter[\"productId\"]}}"
+          }
+        }
+      },
+      {
+        "name": "Products Sync Cashboxes",
+        "value": "Products Sync Cashboxes",
+        "action": "Передать товары, услуги и блюда на кассы",
+        "description": "Метод позволяет передать товары, услуги и блюда на кассы.\nЕсли в теле запроса не указан список из productId, то на кассы передается весь каталог торговой точки.",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/products/syncCashboxes"
+          }
+        }
+      },
+      {
+        "name": "Tech Cards Create Tech Card",
+        "value": "Tech Cards Create Tech Card",
+        "action": "Создать блюдо",
+        "description": "Метод позволяет создать блюдо без ингредиентов, расходных материалов и модификаторов",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/tech-cards"
+          }
+        }
+      },
+      {
+        "name": "Egais Balances Get Egais Balances",
+        "value": "Egais Balances Get Egais Balances",
+        "action": "Получить алкокоды с остатками из ЕГАИС",
+        "description": "Метод позволяет получить алкокоды с остатками из ЕГАИС на 1 и 2 регистрах по данным последнего запроса балансов.\nМетод не вернет в ответе алкокоды, остатки которых на 1 и на 2 регистре равны 0.",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/rests"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акции"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Promotions Get Promotions",
+        "value": "Promotions Get Promotions",
+        "action": "Получить список акций",
+        "description": "Метод позволяет получить список акций",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/promotions"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Торговые Точки"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Shops Get Shops",
+        "value": "Shops Get Shops",
+        "action": "Получить список торговых точек",
+        "description": "Метод позволяет получить список торговых точек. Сортировка в алфавитном порядке по значению идентификатора торговой точки",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops"
+          }
+        }
+      },
+      {
+        "name": "Shops Get Shop",
+        "value": "Shops Get Shop",
+        "action": "Получить торговую точку",
+        "description": "Метод позволяет получить описание неудаленной торговой точки по ее идентификатору",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Way Bills Get Incoming Waybills",
+        "value": "Way Bills Get Incoming Waybills",
+        "action": "Получить входящие накладные за период",
+        "description": "Метод позволяет получить список входящих товароучетных накладных торговой точки. Возвращает не черновики и не удаленные входящие накладные, отсортированные в порядке возрастания даты приемки накладной",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/incoming-waybills"
+          }
+        }
+      },
+      {
+        "name": "Way Bills Get Incoming Waybill",
+        "value": "Way Bills Get Incoming Waybill",
+        "action": "Получить входящую накладную по идентификатору",
+        "description": "Метод позволяет получить входящую товароучетную накладную по ее идентификатору. Возвращает только проведенные накладные",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/incoming-waybills/{{$parameter[\"waybillId\"]}}"
+          }
+        }
+      },
+      {
+        "name": "Way Bills Get Outgoing Waybills",
+        "value": "Way Bills Get Outgoing Waybills",
+        "action": "Получить расходные накладные за период",
+        "description": "Метод позволяет получить список расходных товароучетных накладных торговой точки. Возвращает не черновики и не удаленные расходные накладные, отсортированные в порядке возрастания даты отгрузки накладной",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/outgoing-waybills"
+          }
+        }
+      },
+      {
+        "name": "Way Bills Get Outgoing Waybill",
+        "value": "Way Bills Get Outgoing Waybill",
+        "action": "Получить расходную накладную по идентификатору",
+        "description": "Метод позволяет получить расходную товароучетную накладную по ее идентификатору. Возвращает только проведенные накладные",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/outgoing-waybills/{{$parameter[\"waybillId\"]}}"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акцизные Марки"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Marks Download Marks",
+        "value": "Marks Download Marks",
+        "action": "Получить данные хранилища акцизных марок",
+        "description": "Метод позволяет получить список акцизных марок в состоянии \"В обороте\" и \"В незавершенном документообороте\" в виде файла с расширением .csv.\nВ файле содержатся: mark (акцизная марка), alccode (алкокод акцизной марки), fb (идентификатор справки 2), status (статус акцизной марки)",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/marks"
+          }
+        }
+      },
+      {
+        "name": "Marks Download Mark",
+        "value": "Marks Download Mark",
+        "action": "Получить текущее состояние акцизной марки",
+        "description": "Метод позволяет получить информацию о конкретной акцизной марке.\nОтвет содержит акцизную марку, её статус, алкокод и минимальную розничную цену для объема бутылки",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/marks/{{$parameter[\"mark\"]}}"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Marks Queue Enqueue Mark",
+        "value": "Marks Queue Enqueue Mark",
+        "action": "Добавить акцизную марку в очередь списания",
+        "description": "Метод позволяет добавить акцизную марку в [очередь для списания](https://support.kontur.ru/market/52809-ochered_spisaniya_krepkogo_alkogolya).",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/queue-marks/{{$parameter[\"mark\"]}}"
+          }
+        }
+      },
+      {
+        "name": "Marks Reservation Create",
+        "value": "Marks Reservation Create",
+        "action": "Забронировать объем акцизной марки крепкого алкоголя",
+        "description": "Метод позволяет забронировать объём и получить акцизную марку, для которой произошло бронирование.\nДля успешного бронирования акцизные марки предварительно должны быть добавлены в [очередь для списания](https://support.kontur.ru/market/52809-ochered_spisaniya_krepkogo_alkogolya).",
+        "routing": {
+          "request": {
+            "method": "PUT",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/marks-reservation/{{$parameter[\"reservationId\"]}}"
+          }
+        }
+      },
+      {
+        "name": "Marks Reservation Delete Many",
+        "value": "Marks Reservation Delete Many",
+        "action": "Отменить бронирование объема нескольких акцизных марок",
+        "description": "Метод позволяет массового снять бронирование объема с акцизных марок по reservationId.",
+        "routing": {
+          "request": {
+            "method": "DELETE",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/marks-reservation/batch"
+          }
+        }
+      },
+      {
+        "name": "Marks Reservation Delete",
+        "value": "Marks Reservation Delete",
+        "action": "Отменить бронирование объема акцизной марки",
+        "description": "Метод позволяет снять бронирование объема с одной акцизной марки по reservationId.",
+        "routing": {
+          "request": {
+            "method": "DELETE",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/marks-reservation/{{$parameter[\"reservationId\"]}}/{{$parameter[\"mark\"]}}"
+          }
+        }
+      },
+      {
+        "name": "Marks Reservation Register Pure Portions",
+        "value": "Marks Reservation Register Pure Portions",
+        "action": "Зарегистрировать продажу чистой порции крепкого алкоголя",
+        "description": "Метод позволяет забронировать объем акцизной марки крепкого алкоголя и зарегистрировать продажу этого объема в УТМ.",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/marks-reservation/pure-portions"
+          }
+        }
+      },
+      {
+        "name": "Marks Reservation Register Cocktails",
+        "value": "Marks Reservation Register Cocktails",
+        "action": "Зарегистрировать продажу коктейля",
+        "description": "Метод позволяет забронировать объем акцизной марки крепкого алкоголя, входящей в состав коктейля, и добавить позицию с этой маркой в журнал учета продаж.",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/marks-reservation/cocktails"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Журнал Учета Продаж"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Sales Journal Import Rows",
+        "value": "Sales Journal Import Rows",
+        "action": "Добавить данные о продажах в журнал учета продаж",
+        "description": "Метод позволяет добавить или изменить данные о продажах в журнале учета продаж",
+        "routing": {
+          "request": {
+            "method": "PUT",
+            "url": "=/v1/shops/{{$parameter[\"shopId\"]}}/sales-journal"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Utm Cheques Register Cheque",
+        "value": "Utm Cheques Register Cheque",
+        "action": "Зарегистрировать чек продажи или возврата в УТМ",
+        "description": "Метод позволяет зарегистрировать чек продажи или чек возврата в УТМ.\nИспользуется для регистрации продаж или возвратов бутылок и чистых порций крепкого алкоголя. Продажа алкогольных коктейлей в УТМ регистрировать не нужно.",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/v1/fsrarIds/{{$parameter[\"fsrarId\"]}}/utm-cheques"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date From",
+    "name": "dateFrom",
+    "description": "Дата начала интервала без учета времени, определяется по дате акта списания. Если параметр не указан, по умолчанию дата начала интервала равна текущей. Возможный формат: YYYY-MM-DD",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "dateFrom",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date To",
+    "name": "dateTo",
+    "description": "Дата конца интервала без учета времени, определяется по дате акта списания.  Если параметр не указан, по умолчанию дата конца интервала равна текущей. Возможный формат: YYYY-MM-DD",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "dateTo",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Offset",
+    "name": "offset",
+    "description": "Количество пропускаемых актов. По умолчанию равно 0",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "offset",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Limit",
+    "name": "limit",
+    "description": "Количество возвращаемых актов. По умолчанию равно 100, максимальное значение - 1000",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "limit",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Reason",
+    "name": "reason",
+    "description": "Причина списания товаров с баланса",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "reason",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Source",
+    "name": "source",
+    "description": "Причина, по которой акт был создан в системе",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "source",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Act"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Act Id",
+    "name": "actId",
+    "required": true,
+    "description": "Уникальный идентификатор акта списания",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Write Off Act"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Charge On Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date From",
+    "name": "dateFrom",
+    "description": "Дата начала интервала без учета времени, определяется по дате акта постановки. Если параметр не указан, по умолчанию дата начала интервала равна текущей. Возможный формат: YYYY-MM-DD",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "dateFrom",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Charge On Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date To",
+    "name": "dateTo",
+    "description": "Дата конца интервала без учета времени, определяется по дате акта постановки.  Если параметр не указан, по умолчанию дата конца интервала равна текущей. Возможный формат: YYYY-MM-DD",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "dateTo",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Charge On Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Offset",
+    "name": "offset",
+    "description": "Количество пропускаемых актов. По умолчанию равно 0",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "offset",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Charge On Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Limit",
+    "name": "limit",
+    "description": "Количество возвращаемых актов. По умолчанию равно 100, максимальное значение - 1000",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "limit",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Charge On Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Source",
+    "name": "source",
+    "description": "Причина, по которой акт был создан в системе",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "source",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Charge On Acts"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Charge On Act"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Act Id",
+    "name": "actId",
+    "required": true,
+    "description": "Уникальный идентификатор акта постановки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акты"
+        ],
+        "operation": [
+          "Acts Get Charge On Act"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Cashbox Id",
+    "name": "cashboxId",
+    "description": "Уникальный идентификатор кассы",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "cashboxId",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Cash Register Id",
+    "name": "cashRegisterId",
+    "description": "Уникальный идентификатор кассовой смены",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "cashRegisterId",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date From",
+    "name": "dateFrom",
+    "description": "Дата начала интервала. Определяется по дате закрытия чека. Если параметр не указан, по умолчанию дата начала интервала равна текущей. Возможный формат: YYYY-MM-DD. При useTime=true возможный формат YYYY-MM-DD HH:MM:SS",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "dateFrom",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date To",
+    "name": "dateTo",
+    "description": "Дата конца интервала. Определяется по дате закрытия чека.  Если параметр не указан, по умолчанию дата конца интервала равна текущей. Возможный формат: YYYY-MM-DD. При useTime=true возможный формат YYYY-MM-DD HH:MM:SS",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "dateTo",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Offset",
+    "name": "offset",
+    "description": "Количество пропускаемых чеков. По умолчанию равно 0",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "offset",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Limit",
+    "name": "limit",
+    "description": "Количество возвращаемых чеков. По умолчанию равно 100, максимальное значение - 1000",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "limit",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Refund",
+    "name": "isRefund",
+    "description": "Признак чека возврата. Если параметр не указан, по умолчанию возвращает чеки продажи (false)",
+    "default": false,
+    "type": "boolean",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "isRefund",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Payment Type",
+    "name": "paymentType",
+    "description": "Тип оплаты для чека",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "paymentType",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Use Time",
+    "name": "useTime",
+    "description": "Признак учета времени в параметрах dateFrom и dateTo. По умолчанию False",
+    "default": false,
+    "type": "boolean",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "useTime",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Customer Id",
+    "name": "customerId",
+    "description": "Уникальный идентификатор клиента",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "customerId",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки С Кассы"
+        ],
+        "operation": [
+          "Cheques Get Cheques"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Контрагенты"
+        ],
+        "operation": [
+          "Contractors Get Contractors"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Archived",
+    "name": "isArchived",
+    "description": "Признак архивности. Если параметр не указан, вернет только неархивных контрагентов (По умолчанию False)",
+    "default": false,
+    "type": "boolean",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "isArchived",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Контрагенты"
+        ],
+        "operation": [
+          "Contractors Get Contractors"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Organization Id",
+    "name": "organizationId",
+    "required": true,
+    "description": "Уникальный идентификатор организации",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ],
+        "operation": [
+          "Customers Get Customers"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date From",
+    "name": "dateFrom",
+    "description": "Дата начала интервала, определяется по дате создания клиента. Параметр не обязательный. Возможный формат: YYYY-MM-DD (По умолчанию )",
+    "default": "",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "dateFrom",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ],
+        "operation": [
+          "Customers Get Customers"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date To",
+    "name": "dateTo",
+    "description": "Дата конца интервала, определяется по дате создания клиента. Параметр не обязательный. Возможный формат: YYYY-MM-DD (По умолчанию )",
+    "default": "",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "dateTo",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ],
+        "operation": [
+          "Customers Get Customers"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Offset",
+    "name": "offset",
+    "description": "Количество пропускаемых клиентов. (По умолчанию 0)",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "offset",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ],
+        "operation": [
+          "Customers Get Customers"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Limit",
+    "name": "limit",
+    "description": "Количество возвращаемых клиентов. Максимальное значение - 10000 (По умолчанию 1000)",
+    "default": 1000,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "limit",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ],
+        "operation": [
+          "Customers Get Customers"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "State",
+    "name": "state",
+    "description": "Признак удаленности. Возможные значения: deleted - возвращаются только удаленные клиенты, active - активные, не удаленные клиенты, all - все клиенты. (По умолчанию Active)",
+    "default": "Active",
+    "type": "options",
+    "options": [
+      {
+        "name": "Deleted",
+        "value": "Deleted"
+      },
+      {
+        "name": "Active",
+        "value": "Active"
+      },
+      {
+        "name": "All",
+        "value": "All"
+      }
+    ],
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "state",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ],
+        "operation": [
+          "Customers Get Customers"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Organization Id",
+    "name": "organizationId",
+    "required": true,
+    "description": "Уникальный идентификатор организации",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ],
+        "operation": [
+          "Customers Get Customer"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Customer Id",
+    "name": "customerId",
+    "required": true,
+    "description": "Уникальный идентификатор клиента",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Клиенты"
+        ],
+        "operation": [
+          "Customers Get Customer"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Дополнительные параметры",
+    "name": "additionalFields",
+    "type": "collection",
+    "placeholder": "Add Field",
+    "default": {},
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Организации"
+        ],
+        "operation": [
+          "Organizations Get Organizations"
+        ]
+      }
+    },
+    "options": [
+      {
+        "displayName": "Количество пропускаемых организаций",
+        "name": "offset",
+        "description": "Количество пропускаемых организаций. (По умолчанию 0)",
+        "default": 0,
+        "type": "number",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "offset",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Количество возвращаемых организаций",
+        "name": "limit",
+        "description": "Количество возвращаемых организаций. Максимум 10000 (по умолчанию 1000)",
+        "default": 1000,
+        "type": "number",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "limit",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Статус оплаты торговых точек",
+        "name": "shopsPaymentState",
+        "description": "Статус оплаты торговых точек",
+        "default": "Paid",
+        "type": "options",
+        "options": [
+          {
+            "name": "Оплачено",
+            "value": "Paid"
+          },
+          {
+            "name": "Не оплачено",
+            "value": "Unpaid"
+          },
+          {
+            "name": "Все",
+            "value": "All"
+          }
+        ],
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "shopsPaymentState",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      }
+    ]
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Группы Каталога Товаров"
+        ],
+        "operation": [
+          "Product Groups Get Groups"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Группы Каталога Товаров"
+        ],
+        "operation": [
+          "Product Groups Get Group"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Group Id",
+    "name": "groupId",
+    "required": true,
+    "description": "Уникальный идентификатор группы",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Группы Каталога Товаров"
+        ],
+        "operation": [
+          "Product Groups Get Group"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Остатки Товаров"
+        ],
+        "operation": [
+          "Product Rests Get Rests"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Остатки Товаров"
+        ],
+        "operation": [
+          "Product Rests Change Product Rests"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Date",
+    "name": "Date",
+    "type": "string",
+    "default": "0001-01-01T00:00:00",
+    "description": "Дата изменения остатка. Возможный формат: YYYY-MM-DD\n            ",
+    "routing": {
+      "send": {
+        "property": "Date",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Остатки Товаров"
+        ],
+        "operation": [
+          "Product Rests Change Product Rests"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Note",
+    "name": "Note",
+    "type": "string",
+    "default": "Example",
+    "description": "Комментарий. Не более 500 знаков. Необязательный\n            ",
+    "routing": {
+      "send": {
+        "property": "Note",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Остатки Товаров"
+        ],
+        "operation": [
+          "Product Rests Change Product Rests"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Reason",
+    "name": "Reason",
+    "type": "options",
+    "default": "None",
+    "description": "Причина списания товаров с баланса:\n* `None` - причина не указана в акте;\n* `Lack` - недостача;\n* `Expired` - истек срок годности;\n* `Damage` - брак или порча;\n* `Food` - цеховое питание;\n* `Other` - иное\n            ",
+    "options": [
+      {
+        "name": "None",
+        "value": "None"
+      },
+      {
+        "name": "Lack",
+        "value": "Lack"
+      },
+      {
+        "name": "Expired",
+        "value": "Expired"
+      },
+      {
+        "name": "Damage",
+        "value": "Damage"
+      },
+      {
+        "name": "Food",
+        "value": "Food"
+      },
+      {
+        "name": "Other",
+        "value": "Other"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "Reason",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Остатки Товаров"
+        ],
+        "operation": [
+          "Product Rests Change Product Rests"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Positions",
+    "name": "Positions",
+    "type": "json",
+    "default": "[\n  {\n    \"ProductId\": \"00000000-0000-0000-0000-000000000000\",\n    \"Quantity\": 0,\n    \"BuyPricePerUnit\": 0,\n    \"ExpirationDate\": \"0001-01-01T00:00:00\"\n  }\n]",
+    "description": "Позиции для изменения остатка\n            ",
+    "routing": {
+      "send": {
+        "property": "Positions",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Остатки Товаров"
+        ],
+        "operation": [
+          "Product Rests Change Product Rests"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Get Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Type",
+    "name": "productType",
+    "description": "Тип товара",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "productType",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Get Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "State",
+    "name": "state",
+    "description": "Состояние товара, позволяет получить удаленные или архивные товары. Возможные значения: deleted или archived. Если параметр не указан, вернет только неудаленные и неархивные товары",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "state",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Get Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Id",
+    "name": "ProductId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор товара или услуги. Необязательное поле. Должно быть уникальным в рамках торговой точки (shopId)\n            ",
+    "routing": {
+      "send": {
+        "property": "ProductId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Name",
+    "name": "Name",
+    "type": "string",
+    "default": "Example",
+    "description": "Название товара или услуги. Обязательное поле\n            ",
+    "routing": {
+      "send": {
+        "property": "Name",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Type",
+    "name": "ProductType",
+    "type": "options",
+    "default": "LightAlcohol",
+    "description": "Тип товара:\n* `LightAlcohol` - пиво;\n* `HighAlcohol` - крепкий алкоголь;\n* `AnotherExcise` - подакцизный товар;\n* `Product` - обычный товар (неалкогольный, немаркированный);\n* `TechCard` - составной товар или блюдо;\n* `Service` - услуга;\n* `Prepayment` - предоплата / аванс;\n* `Tobacco` - табак / сигареты;\n* `Shoes` - обувь;\n* `Medicine` - лекарственные средства;\n* `MarkedDress` - одежда, подлежащая маркировке;\n* `Tires` - шины и покрышки;\n* `Perfume` - духи и туалетная вода;\n* `PhotoEquipment` - фотокамеры, фотовспышки и лампы-вспышки;\n* `MilkProducts` - молочная продукция, подлежащая маркировке;\n* `Water` - упакованная вода;\n* `Furs` - меховое изделие;\n* `Bio` - бад (биологически активные добавки);\n* `Antiseptic` - антисептик;\n* `Softdrinks` - безалкогольные напитки;\n* `MedicalDevices` - медицинские изделия;\n* `Vetpharma` - ветеринарные препараты\n* `Seafood` - морепродукты\n* `Nabeer` - безалкогольное пиво;\n* `Bicycle` - велосипеды;\n* `PetFood` - корма для животных;\n* `VegetableOil` - растительные масла;\n* `Conserve` - консервированная продукция;\n* `AutoFluids` - смазочные материалы и спец.автомобильные жидкости;\n* `Grocery` - бакалея;\n* `Chemistry` - парфюмерно-косметическая продукция и бытовая химия;\n            ",
+    "options": [
+      {
+        "name": "Light Alcohol",
+        "value": "LightAlcohol"
+      },
+      {
+        "name": "High Alcohol",
+        "value": "HighAlcohol"
+      },
+      {
+        "name": "Another Excise",
+        "value": "AnotherExcise"
+      },
+      {
+        "name": "Product",
+        "value": "Product"
+      },
+      {
+        "name": "Tech Card",
+        "value": "TechCard"
+      },
+      {
+        "name": "Service",
+        "value": "Service"
+      },
+      {
+        "name": "Prepayment",
+        "value": "Prepayment"
+      },
+      {
+        "name": "Tobacco",
+        "value": "Tobacco"
+      },
+      {
+        "name": "Shoes",
+        "value": "Shoes"
+      },
+      {
+        "name": "Medicine",
+        "value": "Medicine"
+      },
+      {
+        "name": "Marked Dress",
+        "value": "MarkedDress"
+      },
+      {
+        "name": "Tires",
+        "value": "Tires"
+      },
+      {
+        "name": "Perfume",
+        "value": "Perfume"
+      },
+      {
+        "name": "Photo Equipment",
+        "value": "PhotoEquipment"
+      },
+      {
+        "name": "Milk Products",
+        "value": "MilkProducts"
+      },
+      {
+        "name": "Water",
+        "value": "Water"
+      },
+      {
+        "name": "Furs",
+        "value": "Furs"
+      },
+      {
+        "name": "Bio",
+        "value": "Bio"
+      },
+      {
+        "name": "Antiseptic",
+        "value": "Antiseptic"
+      },
+      {
+        "name": "Softdrinks",
+        "value": "Softdrinks"
+      },
+      {
+        "name": "Medical Devices",
+        "value": "MedicalDevices"
+      },
+      {
+        "name": "Vetpharma",
+        "value": "Vetpharma"
+      },
+      {
+        "name": "Seafood",
+        "value": "Seafood"
+      },
+      {
+        "name": "Nabeer",
+        "value": "Nabeer"
+      },
+      {
+        "name": "Bicycle",
+        "value": "Bicycle"
+      },
+      {
+        "name": "Pet Food",
+        "value": "PetFood"
+      },
+      {
+        "name": "Vegetable Oil",
+        "value": "VegetableOil"
+      },
+      {
+        "name": "Conserve",
+        "value": "Conserve"
+      },
+      {
+        "name": "Auto Fluids",
+        "value": "AutoFluids"
+      },
+      {
+        "name": "Grocery",
+        "value": "Grocery"
+      },
+      {
+        "name": "Chemistry",
+        "value": "Chemistry"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "ProductType",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Bar Codes",
+    "name": "BarCodes",
+    "type": "json",
+    "default": "[\n  \"Example\"\n]",
+    "description": "Набор штрихкодов товара. Необязательное поле. Можно указать несколько ШК через запятую в формате EAN-8, EAN-12 или EAN-13\n            ",
+    "routing": {
+      "send": {
+        "property": "BarCodes",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Vendor Code",
+    "name": "VendorCode",
+    "type": "string",
+    "default": "Example",
+    "description": "Артикул товара. Необязательное поле\n            ",
+    "routing": {
+      "send": {
+        "property": "VendorCode",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Group Id",
+    "name": "GroupId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор группы товара или услуги. Если не указывается при создании, то значение = `c9634d5a-aafd-45b7-b0a2-774886218dbd` (Без группы)\n            ",
+    "routing": {
+      "send": {
+        "property": "GroupId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Unit",
+    "name": "Unit",
+    "type": "options",
+    "default": "Piece",
+    "description": "Единица измерения товара:\n* `Piece` - штука;\n* `Package` - упаковка;\n* `Set` - комплект;\n* `Pair` - пара;\n* `Kit` - набор;\n* `Tonne` - тонна;\n* `Kilogram` - килограмм;\n* `Gram` - грамм;\n* `Milligram` - миллиграмм;\n* `CubicMeter` - кубический метр;\n* `Liter` - литр;\n* `Milliliter` - миллилитр;\n* `RunningMeter` - погонный метр;\n* `Kilometer` - километр;\n* `Meter` - метр;\n* `Centimeter` - сантиметр;\n* `Millimeter` - миллиметр;\n* `SquareMeter` - квадратный метр;\n* `SquareCentimeter` - квадратный сантиметр;\n* `Month` - месяц;\n* `Week` - неделя;\n* `Day` - день;\n* `Hour` - час;\n* `Minute` - минута;\n* `KilowattHour` - киловатт-час;\n* `Gigacalorie` - гигакалория;\n* `MegawattHour` - мегаватт-час\n* `Portion` - порция\n            ",
+    "options": [
+      {
+        "name": "Piece",
+        "value": "Piece"
+      },
+      {
+        "name": "Package",
+        "value": "Package"
+      },
+      {
+        "name": "Set",
+        "value": "Set"
+      },
+      {
+        "name": "Pair",
+        "value": "Pair"
+      },
+      {
+        "name": "Kit",
+        "value": "Kit"
+      },
+      {
+        "name": "Tonne",
+        "value": "Tonne"
+      },
+      {
+        "name": "Kilogram",
+        "value": "Kilogram"
+      },
+      {
+        "name": "Gram",
+        "value": "Gram"
+      },
+      {
+        "name": "Milligram",
+        "value": "Milligram"
+      },
+      {
+        "name": "Cubic Meter",
+        "value": "CubicMeter"
+      },
+      {
+        "name": "Liter",
+        "value": "Liter"
+      },
+      {
+        "name": "Milliliter",
+        "value": "Milliliter"
+      },
+      {
+        "name": "Running Meter",
+        "value": "RunningMeter"
+      },
+      {
+        "name": "Kilometer",
+        "value": "Kilometer"
+      },
+      {
+        "name": "Meter",
+        "value": "Meter"
+      },
+      {
+        "name": "Centimeter",
+        "value": "Centimeter"
+      },
+      {
+        "name": "Millimeter",
+        "value": "Millimeter"
+      },
+      {
+        "name": "Square Meter",
+        "value": "SquareMeter"
+      },
+      {
+        "name": "Square Centimeter",
+        "value": "SquareCentimeter"
+      },
+      {
+        "name": "Month",
+        "value": "Month"
+      },
+      {
+        "name": "Week",
+        "value": "Week"
+      },
+      {
+        "name": "Day",
+        "value": "Day"
+      },
+      {
+        "name": "Hour",
+        "value": "Hour"
+      },
+      {
+        "name": "Minute",
+        "value": "Minute"
+      },
+      {
+        "name": "Kilowatt Hour",
+        "value": "KilowattHour"
+      },
+      {
+        "name": "Gigacalorie",
+        "value": "Gigacalorie"
+      },
+      {
+        "name": "Megawatt Hour",
+        "value": "MegawattHour"
+      },
+      {
+        "name": "Portion",
+        "value": "Portion"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "Unit",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Tax System",
+    "name": "TaxSystem",
+    "type": "options",
+    "default": "Bts",
+    "description": "Система налогообложения, указанная для товара:\n* `Bts` - ОСН;\n* `StsIncome` - УСН доходы;\n* `StsExpenses` - УСН доходы-расходы;\n* `Stii` - ЕНВД;\n* `Uat` - ЕСХН;\n* `UatWithVat` - ЕСХН с НДС;\n* `Patent` - Патент\n            ",
+    "options": [
+      {
+        "name": "Bts",
+        "value": "Bts"
+      },
+      {
+        "name": "Sts Income",
+        "value": "StsIncome"
+      },
+      {
+        "name": "Sts Expenses",
+        "value": "StsExpenses"
+      },
+      {
+        "name": "Stii",
+        "value": "Stii"
+      },
+      {
+        "name": "Uat",
+        "value": "Uat"
+      },
+      {
+        "name": "Uat With Vat",
+        "value": "UatWithVat"
+      },
+      {
+        "name": "Patent",
+        "value": "Patent"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "TaxSystem",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Vat Rate",
+    "name": "VatRate",
+    "type": "options",
+    "default": "Unknown",
+    "description": "Ставка НДС, указанная в карточке товара или в позиции чека для товара:\n* `Unknown` - не определена;\n* `Zero` - значение ставки 0%;\n* `Preferential` - значение ставки 10%;\n* `CalculatedPreferential` - значение ставки 10/110;\n* `Main` - значение ставки 22%;\n* `CalculatedMain` - значение ставки 22/122;\n* `NoVat` - значение ставки \"Без НДС\"\n* `StsFirst` - значение ставки 5%\n* `StsSecond` - значение ставки 7%\n* `CalculatedStsFirst` - значение ставки 5/105\n* `CalculatedStsSecond` - значение ставки 7/107\n            ",
+    "options": [
+      {
+        "name": "Unknown",
+        "value": "Unknown"
+      },
+      {
+        "name": "Zero",
+        "value": "Zero"
+      },
+      {
+        "name": "Preferential",
+        "value": "Preferential"
+      },
+      {
+        "name": "Calculated Preferential",
+        "value": "CalculatedPreferential"
+      },
+      {
+        "name": "Main",
+        "value": "Main"
+      },
+      {
+        "name": "Calculated Main",
+        "value": "CalculatedMain"
+      },
+      {
+        "name": "No Vat",
+        "value": "NoVat"
+      },
+      {
+        "name": "Sts First",
+        "value": "StsFirst"
+      },
+      {
+        "name": "Sts Second",
+        "value": "StsSecond"
+      },
+      {
+        "name": "Calculated Sts First",
+        "value": "CalculatedStsFirst"
+      },
+      {
+        "name": "Calculated Sts Second",
+        "value": "CalculatedStsSecond"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "VatRate",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Price Type",
+    "name": "PriceType",
+    "type": "options",
+    "default": "FixPrice",
+    "description": "Тип ценообразования\n* `FixPrice` - Постоянная розничная цена;\n* `WithoutPrice` - Указывать цену на кассе;\n* `PriceRule` - Наценка к цене закупки;\n            ",
+    "options": [
+      {
+        "name": "Fix Price",
+        "value": "FixPrice"
+      },
+      {
+        "name": "Without Price",
+        "value": "WithoutPrice"
+      },
+      {
+        "name": "Price Rule",
+        "value": "PriceRule"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "PriceType",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Sell Price Per Unit",
+    "name": "SellPricePerUnit",
+    "type": "number",
+    "default": 0,
+    "description": "Розничная цена за единицу. Поле обязательное, если ценообразование = `FixPrice`\n            ",
+    "routing": {
+      "send": {
+        "property": "SellPricePerUnit",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Percent",
+    "name": "Percent",
+    "type": "number",
+    "default": 0,
+    "description": "Наценка к цене закупки в процентах. Поле обязательное, если ценообразование = `PriceRule`\n            ",
+    "routing": {
+      "send": {
+        "property": "Percent",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Divider In Kopecks",
+    "name": "DividerInKopecks",
+    "type": "options",
+    "default": "None",
+    "description": "Округление\n* `None` - Не округлять;\n* `TenKopecks` - Округлять до 10 копеек;\n* `HalfRouble` - Округлять до 50 копеек;\n* `Rouble` - Округлять до 1 рубля;\n* `FiveRouble` - Округлять до 5 рублей;\n* `TenRouble` - Округлять до 10 рублей;\n            ",
+    "options": [
+      {
+        "name": "None",
+        "value": "None"
+      },
+      {
+        "name": "Ten Kopecks",
+        "value": "TenKopecks"
+      },
+      {
+        "name": "Half Rouble",
+        "value": "HalfRouble"
+      },
+      {
+        "name": "Rouble",
+        "value": "Rouble"
+      },
+      {
+        "name": "Five Rouble",
+        "value": "FiveRouble"
+      },
+      {
+        "name": "Ten Rouble",
+        "value": "TenRouble"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "DividerInKopecks",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Discount Disabled",
+    "name": "IsDiscountDisabled",
+    "type": "boolean",
+    "default": false,
+    "description": "Запрет применения скидки на кассе. По умолчанию значение = `false`.\nДля ProductType = `Tobacco` и `Prepayment` значение всегда `false`\n            ",
+    "routing": {
+      "send": {
+        "property": "IsDiscountDisabled",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Bonus Disabled",
+    "name": "IsBonusDisabled",
+    "type": "boolean",
+    "default": false,
+    "description": "Запрет начисления бонусов. По умолчанию значение = `false`.\nДля ProductType = `Tobacco` и `Prepayment` значение всегда `false`\n            ",
+    "routing": {
+      "send": {
+        "property": "IsBonusDisabled",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Get Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Id",
+    "name": "productId",
+    "required": true,
+    "description": "Уникальный идентификатор товара",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Get Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Id",
+    "name": "productId",
+    "required": true,
+    "description": "Уникальный идентификатор товара",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Name",
+    "name": "Name",
+    "type": "string",
+    "default": "Example",
+    "description": "Новое название товара\n            ",
+    "routing": {
+      "send": {
+        "property": "Name",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Bar Codes",
+    "name": "BarCodes",
+    "type": "json",
+    "default": "[\n  \"Example\"\n]",
+    "description": "Набор штрихкодов, которые нужно добавить. Можно указать несколько ШК через запятую в формате EAN-8, EAN-12 или EAN-13\n            ",
+    "routing": {
+      "send": {
+        "property": "BarCodes",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Price Type",
+    "name": "PriceType",
+    "type": "options",
+    "default": "FixPrice",
+    "description": "Тип ценообразования\n* `FixPrice` - Постоянная розничная цена;\n* `WithoutPrice` - Указывать цену на кассе;\n* `PriceRule` - Наценка к цене закупки;\n            ",
+    "options": [
+      {
+        "name": "Fix Price",
+        "value": "FixPrice"
+      },
+      {
+        "name": "Without Price",
+        "value": "WithoutPrice"
+      },
+      {
+        "name": "Price Rule",
+        "value": "PriceRule"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "PriceType",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Sell Price",
+    "name": "SellPrice",
+    "type": "number",
+    "default": 0,
+    "description": "Новая розничная цена. Обязательное поле при использовании ценообразования 'FixPrice'\n            ",
+    "routing": {
+      "send": {
+        "property": "SellPrice",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Percent",
+    "name": "Percent",
+    "type": "number",
+    "default": 0,
+    "description": "Наценка к цене закупки в процентах. Обязательное поле при использовании ценообразования 'PriceRule'\n            ",
+    "routing": {
+      "send": {
+        "property": "Percent",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Divider In Kopecks",
+    "name": "DividerInKopecks",
+    "type": "options",
+    "default": "None",
+    "description": "Округление\n* `None` - Не округлять;\n* `TenKopecks` - Округлять до 10 копеек;\n* `HalfRouble` - Округлять до 50 копеек;\n* `Rouble` - Округлять до 1 рубля;\n* `FiveRouble` - Округлять до 5 рублей;\n* `TenRouble` - Округлять до 10 рублей;\n            ",
+    "options": [
+      {
+        "name": "None",
+        "value": "None"
+      },
+      {
+        "name": "Ten Kopecks",
+        "value": "TenKopecks"
+      },
+      {
+        "name": "Half Rouble",
+        "value": "HalfRouble"
+      },
+      {
+        "name": "Rouble",
+        "value": "Rouble"
+      },
+      {
+        "name": "Five Rouble",
+        "value": "FiveRouble"
+      },
+      {
+        "name": "Ten Rouble",
+        "value": "TenRouble"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "DividerInKopecks",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Discount Disabled",
+    "name": "IsDiscountDisabled",
+    "type": "boolean",
+    "default": false,
+    "description": "Запрет скидки\n            ",
+    "routing": {
+      "send": {
+        "property": "IsDiscountDisabled",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Bonus Disabled",
+    "name": "IsBonusDisabled",
+    "type": "boolean",
+    "default": false,
+    "description": "Запрет начисления бонусов\n            ",
+    "routing": {
+      "send": {
+        "property": "IsBonusDisabled",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Pack",
+    "name": "ProductPack",
+    "type": "json",
+    "default": "[\n  {\n    \"NaturalId\": 0,\n    \"Price\": 0\n  }\n]",
+    "description": "Фасовки товара\n            ",
+    "routing": {
+      "send": {
+        "property": "ProductPack",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Update Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Sync Cashboxes"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Body",
+    "name": "body",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "routing": {
+      "request": {
+        "body": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Products Sync Cashboxes"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акции"
+        ],
+        "operation": [
+          "Promotions Get Promotions"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Offset",
+    "name": "offset",
+    "description": "Количество пропускаемых акций (По умолчанию 0)",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "offset",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акции"
+        ],
+        "operation": [
+          "Promotions Get Promotions"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Limit",
+    "name": "limit",
+    "description": "Количество возвращаемых акций. Максимальное значение - 1000 (По умолчанию 100)",
+    "default": 100,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "limit",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акции"
+        ],
+        "operation": [
+          "Promotions Get Promotions"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Activity State",
+    "name": "activityState",
+    "description": "Признак активности акции. Если параметр не указан, вернет только активные акции (По умолчанию Active)",
+    "default": "Active",
+    "type": "options",
+    "options": [
+      {
+        "name": "Active",
+        "value": "Active"
+      },
+      {
+        "name": "Inactive",
+        "value": "Inactive"
+      },
+      {
+        "name": "All",
+        "value": "All"
+      }
+    ],
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "activityState",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акции"
+        ],
+        "operation": [
+          "Promotions Get Promotions"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Deleted",
+    "name": "isDeleted",
+    "description": "Признак удалённости акции (По умолчанию False)",
+    "default": false,
+    "type": "boolean",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "isDeleted",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акции"
+        ],
+        "operation": [
+          "Promotions Get Promotions"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Type",
+    "name": "type",
+    "description": "Тип акции. Возможные значения: Discount - возвращаются только акции в виде скидки на покупку любой позиции из списка, combo - акции в виде скидки на покупку набора из позиций, all - все акции. (По умолчанию All)",
+    "default": "All",
+    "type": "options",
+    "options": [
+      {
+        "name": "Discount",
+        "value": "Discount"
+      },
+      {
+        "name": "Combo",
+        "value": "Combo"
+      },
+      {
+        "name": "All",
+        "value": "All"
+      }
+    ],
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "type",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акции"
+        ],
+        "operation": [
+          "Promotions Get Promotions"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Offset",
+    "name": "offset",
+    "description": "Количество пропускаемых торговых точек. (По умолчанию 0)",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "offset",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Торговые Точки"
+        ],
+        "operation": [
+          "Shops Get Shops"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Limit",
+    "name": "limit",
+    "description": "Количество возвращаемых торговых точек. Максимальное значение - 10000 (По умолчанию 1000)",
+    "default": 1000,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "limit",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Торговые Точки"
+        ],
+        "operation": [
+          "Shops Get Shops"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Payment State",
+    "name": "paymentState",
+    "description": "Статус оплаты торговых точек (По умолчанию Paid)",
+    "default": "Paid",
+    "type": "options",
+    "options": [
+      {
+        "name": "Paid",
+        "value": "Paid"
+      },
+      {
+        "name": "Unpaid",
+        "value": "Unpaid"
+      },
+      {
+        "name": "All",
+        "value": "All"
+      }
+    ],
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "paymentState",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Торговые Точки"
+        ],
+        "operation": [
+          "Shops Get Shops"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Торговые Точки"
+        ],
+        "operation": [
+          "Shops Get Shop"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Id",
+    "name": "ProductId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор блюда. Необязательное поле. Должно быть уникальным в рамках торговой точки (shopId)\n            ",
+    "routing": {
+      "send": {
+        "property": "ProductId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Name",
+    "name": "Name",
+    "type": "string",
+    "default": "Example",
+    "description": "Название блюда. Обязательное поле\n            ",
+    "routing": {
+      "send": {
+        "property": "Name",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Bar Codes",
+    "name": "BarCodes",
+    "type": "json",
+    "default": "[\n  \"Example\"\n]",
+    "description": "Набор штрихкодов блюда. Необязательное поле. Можно указать несколько ШК через запятую в формате EAN-8, EAN-12 или EAN-13\n            ",
+    "routing": {
+      "send": {
+        "property": "BarCodes",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Group Id",
+    "name": "GroupId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор группы блюда. Если не указывается при создании, то значение = `a916c668-e9c5-4abb-9a47-2ef7db3a7249` (Без группы)\n            ",
+    "routing": {
+      "send": {
+        "property": "GroupId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Unit",
+    "name": "Unit",
+    "type": "options",
+    "default": "Piece",
+    "description": "Единица измерения товара:\n* `Piece` - штука;\n* `Kilogram` - килограмм;\n* `Liter` - литр;\n* `Portion` - порция;\n            ",
+    "options": [
+      {
+        "name": "Piece",
+        "value": "Piece"
+      },
+      {
+        "name": "Kilogram",
+        "value": "Kilogram"
+      },
+      {
+        "name": "Liter",
+        "value": "Liter"
+      },
+      {
+        "name": "Portion",
+        "value": "Portion"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "Unit",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Tax System",
+    "name": "TaxSystem",
+    "type": "options",
+    "default": "Bts",
+    "description": "Система налогообложения, указанная для товара:\n* `Bts` - ОСН;\n* `StsIncome` - УСН доходы;\n* `StsExpenses` - УСН доходы-расходы;\n* `Stii` - ЕНВД;\n* `Uat` - ЕСХН;\n* `UatWithVat` - ЕСХН с НДС;\n* `Patent` - Патент\n            ",
+    "options": [
+      {
+        "name": "Bts",
+        "value": "Bts"
+      },
+      {
+        "name": "Sts Income",
+        "value": "StsIncome"
+      },
+      {
+        "name": "Sts Expenses",
+        "value": "StsExpenses"
+      },
+      {
+        "name": "Stii",
+        "value": "Stii"
+      },
+      {
+        "name": "Uat",
+        "value": "Uat"
+      },
+      {
+        "name": "Uat With Vat",
+        "value": "UatWithVat"
+      },
+      {
+        "name": "Patent",
+        "value": "Patent"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "TaxSystem",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Vat Rate",
+    "name": "VatRate",
+    "type": "options",
+    "default": "Unknown",
+    "description": "Ставка НДС, указанная в карточке товара или в позиции чека для товара:\n* `Unknown` - не определена;\n* `Zero` - значение ставки 0%;\n* `Preferential` - значение ставки 10%;\n* `CalculatedPreferential` - значение ставки 10/110;\n* `Main` - значение ставки 22%;\n* `CalculatedMain` - значение ставки 22/122;\n* `NoVat` - значение ставки \"Без НДС\"\n* `StsFirst` - значение ставки 5%\n* `StsSecond` - значение ставки 7%\n* `CalculatedStsFirst` - значение ставки 5/105\n* `CalculatedStsSecond` - значение ставки 7/107\n            ",
+    "options": [
+      {
+        "name": "Unknown",
+        "value": "Unknown"
+      },
+      {
+        "name": "Zero",
+        "value": "Zero"
+      },
+      {
+        "name": "Preferential",
+        "value": "Preferential"
+      },
+      {
+        "name": "Calculated Preferential",
+        "value": "CalculatedPreferential"
+      },
+      {
+        "name": "Main",
+        "value": "Main"
+      },
+      {
+        "name": "Calculated Main",
+        "value": "CalculatedMain"
+      },
+      {
+        "name": "No Vat",
+        "value": "NoVat"
+      },
+      {
+        "name": "Sts First",
+        "value": "StsFirst"
+      },
+      {
+        "name": "Sts Second",
+        "value": "StsSecond"
+      },
+      {
+        "name": "Calculated Sts First",
+        "value": "CalculatedStsFirst"
+      },
+      {
+        "name": "Calculated Sts Second",
+        "value": "CalculatedStsSecond"
+      }
+    ],
+    "routing": {
+      "send": {
+        "property": "VatRate",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Sell Price Per Unit",
+    "name": "SellPricePerUnit",
+    "type": "number",
+    "default": 0,
+    "description": "Розничная цена за единицу. Обязательное поле\n            ",
+    "routing": {
+      "send": {
+        "property": "SellPricePerUnit",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Discount Disabled",
+    "name": "IsDiscountDisabled",
+    "type": "boolean",
+    "default": false,
+    "description": "Запрет применения скидки на кассе. Если не указывается при создании, то проставляется `false`\n            ",
+    "routing": {
+      "send": {
+        "property": "IsDiscountDisabled",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Is Tech Card Excise",
+    "name": "IsTechCardExcise",
+    "type": "boolean",
+    "default": false,
+    "description": "Признак подакцизности блюда. Обязательное поле\n            ",
+    "routing": {
+      "send": {
+        "property": "IsTechCardExcise",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Tech Cards Create Tech Card"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Receive Date From",
+    "name": "receiveDateFrom",
+    "description": "Дата начала интервала без учета времени, определяется по дате приемки накладной. Если параметр не указан, по умолчанию дата начала интервала равна текущей. Возможный формат: YYYY-MM-DD",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "receiveDateFrom",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Receive Date To",
+    "name": "receiveDateTo",
+    "description": "Дата конца интервала без учета времени, определяется по дате приемки накладной. Если параметр не указан, по умолчанию дата конца интервала равна текущей. Возможный формат: YYYY-MM-DD",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "receiveDateTo",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Offset",
+    "name": "offset",
+    "description": "Количество пропускаемых накладных. По умолчанию равно 0",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "offset",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Limit",
+    "name": "limit",
+    "description": "Количество возвращаемых накладных. По умолчанию равно 100, максимальное значение - 1000",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "limit",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Source",
+    "name": "source",
+    "description": "Источник товароучетной входящей накладной",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "source",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Supplier Id",
+    "name": "supplierId",
+    "description": "Уникальный идентификатор поставщика",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "supplierId",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybill"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Waybill Id",
+    "name": "waybillId",
+    "required": true,
+    "description": "Уникальный идентификатор входящей товароучетной накладной",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Incoming Waybill"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shipping Date From",
+    "name": "shippingDateFrom",
+    "description": "Дата начала интервала без учета времени, определяется по дате отгрузки накладной. Если параметр не указан, по умолчанию дата начала интервала равна текущей. Возможный формат: YYYY-MM-DD",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "shippingDateFrom",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shipping Date To",
+    "name": "shippingDateTo",
+    "description": "Дата конца интервала без учета времени, определяется по дате отгрузки накладной. Если параметр не указан, по умолчанию дата конца интервала равна текущей. Возможный формат: YYYY-MM-DD",
+    "default": "0001-01-01T00:00:00",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "shippingDateTo",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Offset",
+    "name": "offset",
+    "description": "Количество пропускаемых накладных. По умолчанию равно 0",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "offset",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Limit",
+    "name": "limit",
+    "description": "Количество возвращаемых накладных. По умолчанию равно 100, максимальное значение - 1000",
+    "default": 0,
+    "type": "number",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "limit",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Type",
+    "name": "type",
+    "description": "Тип расходной накладной",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "type",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Source",
+    "name": "source",
+    "description": "Источник товароучетной расходной накладной",
+    "default": "Example",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "source",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Buyer Id",
+    "name": "buyerId",
+    "description": "Уникальный идентификатор получателя накладной",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "routing": {
+      "send": {
+        "type": "query",
+        "property": "buyerId",
+        "value": "={{ $value }}",
+        "propertyInDotNotation": false
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybills"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybill"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Waybill Id",
+    "name": "waybillId",
+    "required": true,
+    "description": "Уникальный идентификатор расходной товароучетной накладной",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Накладные"
+        ],
+        "operation": [
+          "Way Bills Get Outgoing Waybill"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Товары Услуги И Блюда"
+        ],
+        "operation": [
+          "Egais Balances Get Egais Balances"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акцизные Марки"
+        ],
+        "operation": [
+          "Marks Download Marks"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акцизные Марки"
+        ],
+        "operation": [
+          "Marks Download Mark"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Mark",
+    "name": "mark",
+    "required": true,
+    "description": "Акцизная марка крепкого алкоголя",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Акцизные Марки"
+        ],
+        "operation": [
+          "Marks Download Mark"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Queue Enqueue Mark"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Mark",
+    "name": "mark",
+    "required": true,
+    "description": "Акцизная марка крепкого алкоголя",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Queue Enqueue Mark"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Create"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Reservation Id",
+    "name": "reservationId",
+    "required": true,
+    "description": "Уникальный идентификатор (GUID) бронирования",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Create"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Alco Codes",
+    "name": "AlcoCodes",
+    "type": "json",
+    "default": "[\n  \"Example\"\n]",
+    "description": "Список алкокодов\n            ",
+    "routing": {
+      "send": {
+        "property": "AlcoCodes",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Create"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Volume",
+    "name": "Volume",
+    "type": "number",
+    "default": 0,
+    "description": "Объем в мл\n            ",
+    "routing": {
+      "send": {
+        "property": "Volume",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Create"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Delete Many"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Body",
+    "name": "body",
+    "type": "json",
+    "default": "{\n  \"ReservationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"Mark\": \"Example\"\n}",
+    "routing": {
+      "request": {
+        "body": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Delete Many"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Delete"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Reservation Id",
+    "name": "reservationId",
+    "required": true,
+    "description": "Уникальный идентификатор (GUID) бронирования",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Delete"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Mark",
+    "name": "mark",
+    "required": true,
+    "description": "Акцизная марка крепкого алкоголя, для которой нужно отменить бронирование объема",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Delete"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Pure Portions"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Shop Id",
+    "name": "ShopId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор торговой точки\n            ",
+    "routing": {
+      "send": {
+        "property": "ShopId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Pure Portions"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Reservation Id",
+    "name": "ReservationId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор бронирования\n            ",
+    "routing": {
+      "send": {
+        "property": "ReservationId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Pure Portions"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Cashbox Number",
+    "name": "CashboxNumber",
+    "type": "string",
+    "default": "Example",
+    "description": "Заводской номер фискального накопителя. В ККТ указывается при фискализации. Тег ФФД в чеке - 1040\n            ",
+    "routing": {
+      "send": {
+        "property": "CashboxNumber",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Pure Portions"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Shift",
+    "name": "Shift",
+    "type": "number",
+    "default": 0,
+    "description": "Порядкой номер смены на кассе\n            ",
+    "routing": {
+      "send": {
+        "property": "Shift",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Pure Portions"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Cheque Number",
+    "name": "ChequeNumber",
+    "type": "number",
+    "default": 0,
+    "description": "Порядковый номер чека. Номер фискального документа. Тег ФФД в чеке - 1041\n            ",
+    "routing": {
+      "send": {
+        "property": "ChequeNumber",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Pure Portions"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Date",
+    "name": "Date",
+    "type": "string",
+    "default": "0001-01-01T00:00:00",
+    "description": "Дата и время запроса на регистрацию чека в часовом поясе кассы\n            ",
+    "routing": {
+      "send": {
+        "property": "Date",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Pure Portions"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Positions",
+    "name": "Positions",
+    "type": "json",
+    "default": "[\n  {\n    \"PositionId\": \"00000000-0000-0000-0000-000000000000\",\n    \"IngredientId\": \"00000000-0000-0000-0000-000000000000\",\n    \"AlcCodes\": [\n      {\n        \"AlcCode\": \"Example\",\n        \"Ean\": \"Example\"\n      }\n    ],\n    \"Volume\": 0,\n    \"Price\": 0\n  }\n]",
+    "description": "Список позиций для подбора марки, бронирования объема и регистрации продажи в УТМ\n            ",
+    "routing": {
+      "send": {
+        "property": "Positions",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Pure Portions"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Cocktails"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Shop Id",
+    "name": "ShopId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор торговой точки\n            ",
+    "routing": {
+      "send": {
+        "property": "ShopId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Cocktails"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Reservation Id",
+    "name": "ReservationId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор бронирования\n            ",
+    "routing": {
+      "send": {
+        "property": "ReservationId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Cocktails"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Date",
+    "name": "Date",
+    "type": "string",
+    "default": "0001-01-01T00:00:00",
+    "description": "Дата и время запроса на регистрацию чека в часовом поясе кассы\n            ",
+    "routing": {
+      "send": {
+        "property": "Date",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Cocktails"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Cashbox Number",
+    "name": "CashboxNumber",
+    "type": "string",
+    "default": "Example",
+    "description": "Заводской номер фискального накопителя. В ККТ указывается при фискализации. Тег ФФД в чеке - 1040\n            ",
+    "routing": {
+      "send": {
+        "property": "CashboxNumber",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Cocktails"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Positions",
+    "name": "Positions",
+    "type": "json",
+    "default": "[\n  {\n    \"PositionId\": \"00000000-0000-0000-0000-000000000000\",\n    \"IngredientId\": \"00000000-0000-0000-0000-000000000000\",\n    \"AlcCodes\": [\n      {\n        \"AlcCode\": \"Example\",\n        \"Ean\": \"Example\"\n      }\n    ],\n    \"Volume\": 0,\n    \"Price\": 0\n  }\n]",
+    "description": "Список позиций для подбора марки, бронирования объема и добавления записи в журнал учета продаж\n            ",
+    "routing": {
+      "send": {
+        "property": "Positions",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Очередь Акцизных Марок"
+        ],
+        "operation": [
+          "Marks Reservation Register Cocktails"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shopId",
+    "required": true,
+    "description": "Уникальный идентификатор торговой точки",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Журнал Учета Продаж"
+        ],
+        "operation": [
+          "Sales Journal Import Rows"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Body",
+    "name": "body",
+    "type": "json",
+    "default": "{\n  \"ChequeId\": \"00000000-0000-0000-0000-000000000000\",\n  \"Mark\": \"Example\",\n  \"AlcCode\": \"Example\",\n  \"CloseTime\": \"0001-01-01T00:00:00\",\n  \"Quantity\": 0,\n  \"Price\": 0,\n  \"IsRegistered\": false\n}",
+    "routing": {
+      "request": {
+        "body": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Журнал Учета Продаж"
+        ],
+        "operation": [
+          "Sales Journal Import Rows"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Fsrar Id",
+    "name": "fsrarId",
+    "required": true,
+    "description": "Идентификатор магазина в системе ЕГАИС",
+    "default": "Example",
+    "type": "string",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ],
+        "operation": [
+          "Utm Cheques Register Cheque"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Cheque Id",
+    "name": "ChequeId",
+    "type": "string",
+    "default": "00000000-0000-0000-0000-000000000000",
+    "description": "Уникальный идентификатор чека. Обязательное поле",
+    "routing": {
+      "send": {
+        "property": "ChequeId",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ],
+        "operation": [
+          "Utm Cheques Register Cheque"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Registration Date Time",
+    "name": "RegistrationDateTime",
+    "type": "string",
+    "default": "0001-01-01T00:00:00",
+    "description": "Дата и время запроса на регистрацию чека в часовом поясе кассы. Обязательное поле",
+    "routing": {
+      "send": {
+        "property": "RegistrationDateTime",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ],
+        "operation": [
+          "Utm Cheques Register Cheque"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Cash Box Number",
+    "name": "CashBoxNumber",
+    "type": "string",
+    "default": "Example",
+    "description": "Заводской номер фискального накопителя. В ККТ указывается при фискализации. Тег ФФД в чеке - 1040. Обязательное поле",
+    "routing": {
+      "send": {
+        "property": "CashBoxNumber",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ],
+        "operation": [
+          "Utm Cheques Register Cheque"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Shift Number",
+    "name": "ShiftNumber",
+    "type": "number",
+    "default": 0,
+    "description": "Порядкой номер смены на кассе. Обязательное поле",
+    "routing": {
+      "send": {
+        "property": "ShiftNumber",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ],
+        "operation": [
+          "Utm Cheques Register Cheque"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Receipt Number",
+    "name": "ReceiptNumber",
+    "type": "number",
+    "default": 0,
+    "description": "Порядковый номер чека. Номер фискального документа. Тег ФФД в чеке - 1041. Обязательное поле",
+    "routing": {
+      "send": {
+        "property": "ReceiptNumber",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ],
+        "operation": [
+          "Utm Cheques Register Cheque"
+        ]
+      }
+    }
+  },
+  {
+    "required": true,
+    "displayName": "Is Return",
+    "name": "IsReturn",
+    "type": "boolean",
+    "default": false,
+    "description": "Признак чека возврата. Обязательное поле.",
+    "routing": {
+      "send": {
+        "property": "IsReturn",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ $value }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ],
+        "operation": [
+          "Utm Cheques Register Cheque"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Positions",
+    "name": "Positions",
+    "type": "json",
+    "default": "[\n  {\n    \"Mark\": \"Example\",\n    \"Ean\": \"Example\",\n    \"Price\": 0,\n    \"Volume\": 0\n  }\n]",
+    "description": "Позиции чека",
+    "routing": {
+      "send": {
+        "property": "Positions",
+        "propertyInDotNotation": false,
+        "type": "body",
+        "value": "={{ JSON.parse($value) }}"
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Чеки В УТМ"
+        ],
+        "operation": [
+          "Utm Cheques Register Cheque"
+        ]
+      }
+    }
+  }
+]
