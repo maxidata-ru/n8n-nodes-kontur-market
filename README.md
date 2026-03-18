@@ -7,9 +7,9 @@
 
 [Контур.Маркет](https://kontur.ru/market) — облачный сервис для автоматизации торговли и общепита: касса, товароучёт, маркировка, ЕГАИС и «Меркурий» в одном окне.
 
-[n8n](https://n8n.io/) — это платформа автоматизации рабочих процессов с лицензией [fair-code](https://docs.n8n.io/sustainable-use-license/)
+[n8n](https://n8n.io/) — это платформа автоматизации рабочих процессов.
 
-![Пример использования ноды Маркета](docs/screenshot-n8n-kontur-market.png)
+![Пример использования ноды Маркета](docs/screenshot-n8n-kontur-market-workflow.png)
 
 ------------------------------------------------------------------------
 
@@ -52,6 +52,13 @@ npm install n8n-nodes-kontur-market
 5.  Нажмите **Save**
 
 Если всё настроено правильно, появится сообщение `Connection tested successfully`
+
+# Полезные ссылки
+
+- [Техническая документация API Контур.Маркет](https://developer.kontur.ru/doc/market.public)
+- [Справочная информация по API Контур.Маркет (выпуск ключа, поддержка и др.)](https://support.kontur.ru/market/39530-integraciya_s_pomoshhyu_api)
+- [Документация по установке community nodes n8n](https://docs.n8n.io/integrations/community-nodes/installation/)
+- [Руководство по self-hosted установке n8n](https://docs.n8n.io/hosting/)
 
 ------------------------------------------------------------------------
 
@@ -187,13 +194,3 @@ npm run dev
 ``` bash
 npm run dev:reset
 ```
-
-------------------------------------------------------------------------
-
-# Полезные ссылки
-
-- [Техническая документация API Контур.Маркет](https://developer.kontur.ru/doc/market.public)
-- [Справочная информация по API Контур.Маркет (выпуск ключа, поддержка и др.)](https://support.kontur.ru/market/39530-integraciya_s_pomoshhyu_api)
-- [Документация по установке community nodes n8n](https://docs.n8n.io/integrations/community-nodes/installation/)
-- [Руководство по self-hosted установке n8n](https://docs.n8n.io/hosting/)
-
