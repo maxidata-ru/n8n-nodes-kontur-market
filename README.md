@@ -176,8 +176,6 @@ npm install n8n-nodes-kontur-market
 - `credentials/`
 - `dist/` как результат сборки
 
-Не вносите изменения в `package/`. Эта папка является побочным артефактом упаковки npm и не должна быть источником правды в dev-режиме.
-
 Стандартный запуск:
 
 ``` bash
@@ -190,13 +188,6 @@ npm run dev
 npm run dev:reset
 ```
 
-Проверка изменений:
-
-1. Меняйте файлы в `nodes/` или `credentials/`
-2. Дождитесь пересборки в терминале с `npm run dev`
-3. В браузере сделайте hard refresh
-4. Для проверки `displayName` удалите старую ноду из workflow и добавьте новую заново
-
 ------------------------------------------------------------------------
 
 # Полезные ссылки
@@ -206,8 +197,3 @@ npm run dev:reset
 - [Документация по установке community nodes n8n](https://docs.n8n.io/integrations/community-nodes/installation/)
 - [Руководство по self-hosted установке n8n](https://docs.n8n.io/hosting/)
 
-------------------------------------------------------------------------
-
-# Лицензия
-
-[MIT](https://github.com/pfrankov/n8n-nodes-max/blob/HEAD/LICENSE.md)
