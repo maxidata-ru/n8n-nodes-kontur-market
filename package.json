@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-kontur-market",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Нода для интеграции Контур.Маркет с платформой автоматизации n8n. Позволяет получать данные о товарах, остатках, продажах, клиентах и акциях, а также управлять товарами и остатками.",
   "license": "MIT",
   "homepage": "https://github.com/maxidata-ru/n8n-nodes-kontur-market",
