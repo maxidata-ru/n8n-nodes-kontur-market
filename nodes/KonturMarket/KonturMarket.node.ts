@@ -9,9 +9,10 @@ export class KonturMarket implements INodeType {
 		name: 'konturMarket',
 		icon: { light: 'file:konturMarket.svg', dark: 'file:konturMarket.dark.svg' },
 		group: ['transform'],
+		documentationUrl: 'https://github.com/maxidata-ru/n8n-nodes-kontur-market',
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with the Kontur Market API',
+		description: 'Нода для интеграции Контур.Маркет с платформой автоматизации n8n. Позволяет получать данные о товарах, остатках, продажах, клиентах и акциях, а также управлять товарами и остатками.',
 		defaults: {
 			name: 'Kontur Market',
 		},

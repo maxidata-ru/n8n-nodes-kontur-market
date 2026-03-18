@@ -257,10 +257,10 @@
     },
     "options": [
       {
-        "name": "Получить список организаций77",
+        "name": "Получить список организаций",
         "value": "Organizations Get Organizations",
         "action": "Получить список организаций",
-        "description": "Метод 77 позволяет получить список организаций, доступных по api-key. Сортировка в алфавитном порядке по значению идентификатора организации",
+        "description": "Метод позволяет получить список организаций, доступных по api-key. Сортировка в алфавитном порядке по значению идентификатора организации",
         "routing": {
           "request": {
             "method": "GET",
@@ -493,7 +493,7 @@
     },
     "options": [
       {
-        "name": "Shops Get Shops",
+        "name": "Получить список торговых точек",
         "value": "Shops Get Shops",
         "action": "Получить список торговых точек",
         "description": "Метод позволяет получить список торговых точек. Сортировка в алфавитном порядке по значению идентификатора торговой точки",
@@ -505,7 +505,7 @@
         }
       },
       {
-        "name": "Shops Get Shop",
+        "name": "Получить торговую точку",
         "value": "Shops Get Shop",
         "action": "Получить торговую точку",
         "description": "Метод позволяет получить описание неудаленной торговой точки по ее идентификатору",
@@ -772,7 +772,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -940,7 +940,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -958,7 +958,7 @@
     "name": "actId",
     "required": true,
     "description": "Уникальный идентификатор акта списания",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -976,7 +976,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1119,7 +1119,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1137,7 +1137,7 @@
     "name": "actId",
     "required": true,
     "description": "Уникальный идентификатор акта постановки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1155,58 +1155,8 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
-    "displayOptions": {
-      "show": {
-        "resource": [
-          "Чеки С Кассы"
-        ],
-        "operation": [
-          "Cheques Get Cheques"
-        ]
-      }
-    }
-  },
-  {
-    "displayName": "Cashbox Id",
-    "name": "cashboxId",
-    "description": "Уникальный идентификатор кассы",
-    "default": "00000000-0000-0000-0000-000000000000",
-    "type": "string",
-    "routing": {
-      "send": {
-        "type": "query",
-        "property": "cashboxId",
-        "value": "={{ $value }}",
-        "propertyInDotNotation": false
-      }
-    },
-    "displayOptions": {
-      "show": {
-        "resource": [
-          "Чеки С Кассы"
-        ],
-        "operation": [
-          "Cheques Get Cheques"
-        ]
-      }
-    }
-  },
-  {
-    "displayName": "Cash Register Id",
-    "name": "cashRegisterId",
-    "description": "Уникальный идентификатор кассовой смены",
-    "default": "Example",
-    "type": "string",
-    "routing": {
-      "send": {
-        "type": "query",
-        "property": "cashRegisterId",
-        "value": "={{ $value }}",
-        "propertyInDotNotation": false
-      }
-    },
     "displayOptions": {
       "show": {
         "resource": [
@@ -1222,7 +1172,7 @@
     "displayName": "Date From",
     "name": "dateFrom",
     "description": "Дата начала интервала. Определяется по дате закрытия чека. Если параметр не указан, по умолчанию дата начала интервала равна текущей. Возможный формат: YYYY-MM-DD. При useTime=true возможный формат YYYY-MM-DD HH:MM:SS",
-    "default": "0001-01-01T00:00:00",
+    "default": "YYYY-MM-DD",
     "type": "string",
     "routing": {
       "send": {
@@ -1247,7 +1197,7 @@
     "displayName": "Date To",
     "name": "dateTo",
     "description": "Дата конца интервала. Определяется по дате закрытия чека.  Если параметр не указан, по умолчанию дата конца интервала равна текущей. Возможный формат: YYYY-MM-DD. При useTime=true возможный формат YYYY-MM-DD HH:MM:SS",
-    "default": "0001-01-01T00:00:00",
+    "default": "YYYY-MM-DD",
     "type": "string",
     "routing": {
       "send": {
@@ -1269,19 +1219,11 @@
     }
   },
   {
-    "displayName": "Offset",
-    "name": "offset",
-    "description": "Количество пропускаемых чеков. По умолчанию равно 0",
-    "default": 0,
-    "type": "number",
-    "routing": {
-      "send": {
-        "type": "query",
-        "property": "offset",
-        "value": "={{ $value }}",
-        "propertyInDotNotation": false
-      }
-    },
+    "displayName": "Дополнительные параметры",
+    "name": "additionalFields",
+    "type": "collection",
+    "placeholder": "Add Field",
+    "default": {},
     "displayOptions": {
       "show": {
         "resource": [
@@ -1291,139 +1233,136 @@
           "Cheques Get Cheques"
         ]
       }
-    }
-  },
-  {
-    "displayName": "Limit",
-    "name": "limit",
-    "description": "Количество возвращаемых чеков. По умолчанию равно 100, максимальное значение - 1000",
-    "default": 0,
-    "type": "number",
-    "routing": {
-      "send": {
-        "type": "query",
-        "property": "limit",
-        "value": "={{ $value }}",
-        "propertyInDotNotation": false
-      }
     },
-    "displayOptions": {
-      "show": {
-        "resource": [
-          "Чеки С Кассы"
-        ],
-        "operation": [
-          "Cheques Get Cheques"
-        ]
+    "options": [
+      {
+        "displayName": "Cashbox Id",
+        "name": "cashboxId",
+        "description": "Уникальный идентификатор кассы",
+        "default": "",
+        "type": "string",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "cashboxId",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Cash Register Id",
+        "name": "cashRegisterId",
+        "description": "Уникальный идентификатор кассовой смены",
+        "default": "Example",
+        "type": "string",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "cashRegisterId",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Offset",
+        "name": "offset",
+        "description": "Количество пропускаемых чеков. По умолчанию равно 0",
+        "default": 0,
+        "type": "number",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "offset",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Limit",
+        "name": "limit",
+        "description": "Количество возвращаемых чеков. По умолчанию равно 100, максимальное значение - 1000",
+        "default": 0,
+        "type": "number",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "limit",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Is Refund",
+        "name": "isRefund",
+        "description": "Признак чека возврата. Если параметр не указан, по умолчанию возвращает чеки продажи (false)",
+        "default": false,
+        "type": "boolean",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "isRefund",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Payment Type",
+        "name": "paymentType",
+        "description": "Тип оплаты для чека",
+        "default": "Example",
+        "type": "string",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "paymentType",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Use Time",
+        "name": "useTime",
+        "description": "Признак учета времени в параметрах dateFrom и dateTo. По умолчанию False",
+        "default": false,
+        "type": "boolean",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "useTime",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
+      },
+      {
+        "displayName": "Customer Id",
+        "name": "customerId",
+        "description": "Уникальный идентификатор клиента",
+        "default": "",
+        "type": "string",
+        "routing": {
+          "send": {
+            "type": "query",
+            "property": "customerId",
+            "value": "={{ $value }}",
+            "propertyInDotNotation": false
+          }
+        }
       }
-    }
-  },
-  {
-    "displayName": "Is Refund",
-    "name": "isRefund",
-    "description": "Признак чека возврата. Если параметр не указан, по умолчанию возвращает чеки продажи (false)",
-    "default": false,
-    "type": "boolean",
-    "routing": {
-      "send": {
-        "type": "query",
-        "property": "isRefund",
-        "value": "={{ $value }}",
-        "propertyInDotNotation": false
-      }
-    },
-    "displayOptions": {
-      "show": {
-        "resource": [
-          "Чеки С Кассы"
-        ],
-        "operation": [
-          "Cheques Get Cheques"
-        ]
-      }
-    }
-  },
-  {
-    "displayName": "Payment Type",
-    "name": "paymentType",
-    "description": "Тип оплаты для чека",
-    "default": "Example",
-    "type": "string",
-    "routing": {
-      "send": {
-        "type": "query",
-        "property": "paymentType",
-        "value": "={{ $value }}",
-        "propertyInDotNotation": false
-      }
-    },
-    "displayOptions": {
-      "show": {
-        "resource": [
-          "Чеки С Кассы"
-        ],
-        "operation": [
-          "Cheques Get Cheques"
-        ]
-      }
-    }
-  },
-  {
-    "displayName": "Use Time",
-    "name": "useTime",
-    "description": "Признак учета времени в параметрах dateFrom и dateTo. По умолчанию False",
-    "default": false,
-    "type": "boolean",
-    "routing": {
-      "send": {
-        "type": "query",
-        "property": "useTime",
-        "value": "={{ $value }}",
-        "propertyInDotNotation": false
-      }
-    },
-    "displayOptions": {
-      "show": {
-        "resource": [
-          "Чеки С Кассы"
-        ],
-        "operation": [
-          "Cheques Get Cheques"
-        ]
-      }
-    }
-  },
-  {
-    "displayName": "Customer Id",
-    "name": "customerId",
-    "description": "Уникальный идентификатор клиента",
-    "default": "00000000-0000-0000-0000-000000000000",
-    "type": "string",
-    "routing": {
-      "send": {
-        "type": "query",
-        "property": "customerId",
-        "value": "={{ $value }}",
-        "propertyInDotNotation": false
-      }
-    },
-    "displayOptions": {
-      "show": {
-        "resource": [
-          "Чеки С Кассы"
-        ],
-        "operation": [
-          "Cheques Get Cheques"
-        ]
-      }
-    }
+    ]
   },
   {
     "displayName": "Shop Id",
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1466,7 +1405,7 @@
     "name": "organizationId",
     "required": true,
     "description": "Уникальный идентификатор организации",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1623,7 +1562,7 @@
     "name": "organizationId",
     "required": true,
     "description": "Уникальный идентификатор организации",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1641,7 +1580,7 @@
     "name": "customerId",
     "required": true,
     "description": "Уникальный идентификатор клиента",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1737,7 +1676,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1755,7 +1694,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1773,7 +1712,7 @@
     "name": "groupId",
     "required": true,
     "description": "Уникальный идентификатор группы",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1791,7 +1730,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1809,7 +1748,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -1927,7 +1866,7 @@
     "displayName": "Positions",
     "name": "Positions",
     "type": "json",
-    "default": "[\n  {\n    \"ProductId\": \"00000000-0000-0000-0000-000000000000\",\n    \"Quantity\": 0,\n    \"BuyPricePerUnit\": 0,\n    \"ExpirationDate\": \"0001-01-01T00:00:00\"\n  }\n]",
+    "default": "[\n  {\n    \"ProductId\": \"\",\n    \"Quantity\": 0,\n    \"BuyPricePerUnit\": 0,\n    \"ExpirationDate\": \"0001-01-01T00:00:00\"\n  }\n]",
     "description": "Позиции для изменения остатка\n            ",
     "routing": {
       "send": {
@@ -1953,7 +1892,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -2021,7 +1960,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -2038,7 +1977,7 @@
     "displayName": "Product Id",
     "name": "ProductId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор товара или услуги. Необязательное поле. Должно быть уникальным в рамках торговой точки (shopId)\n            ",
     "routing": {
       "send": {
@@ -2289,7 +2228,7 @@
     "displayName": "Group Id",
     "name": "GroupId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор группы товара или услуги. Если не указывается при создании, то значение = `c9634d5a-aafd-45b7-b0a2-774886218dbd` (Без группы)\n            ",
     "routing": {
       "send": {
@@ -2770,7 +2709,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -2788,7 +2727,7 @@
     "name": "productId",
     "required": true,
     "description": "Уникальный идентификатор товара",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -2806,7 +2745,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -2824,7 +2763,7 @@
     "name": "productId",
     "required": true,
     "description": "Уникальный идентификатор товара",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -3107,7 +3046,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -3124,7 +3063,7 @@
     "displayName": "Body",
     "name": "body",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "routing": {
       "request": {
         "body": "={{ JSON.parse($value) }}"
@@ -3146,7 +3085,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -3363,24 +3302,24 @@
     }
   },
   {
-    "displayName": "Payment State",
+    "displayName": "Статус оплаты торговых точек",
     "name": "paymentState",
     "description": "Статус оплаты торговых точек (По умолчанию Paid)",
     "default": "Paid",
     "type": "options",
     "options": [
-      {
-        "name": "Paid",
-        "value": "Paid"
-      },
-      {
-        "name": "Unpaid",
-        "value": "Unpaid"
-      },
-      {
-        "name": "All",
-        "value": "All"
-      }
+          {
+            "name": "Оплачена",
+            "value": "Paid"
+          },
+          {
+            "name": "Не оплачена",
+            "value": "Unpaid"
+          },
+          {
+            "name": "Все",
+            "value": "All"
+          }
     ],
     "routing": {
       "send": {
@@ -3406,7 +3345,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -3424,7 +3363,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -3441,7 +3380,7 @@
     "displayName": "Product Id",
     "name": "ProductId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор блюда. Необязательное поле. Должно быть уникальным в рамках торговой точки (shopId)\n            ",
     "routing": {
       "send": {
@@ -3516,7 +3455,7 @@
     "displayName": "Group Id",
     "name": "GroupId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор группы блюда. Если не указывается при создании, то значение = `a916c668-e9c5-4abb-9a47-2ef7db3a7249` (Без группы)\n            ",
     "routing": {
       "send": {
@@ -3788,7 +3727,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -3930,7 +3869,7 @@
     "displayName": "Supplier Id",
     "name": "supplierId",
     "description": "Уникальный идентификатор поставщика",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "routing": {
       "send": {
@@ -3956,7 +3895,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -3974,7 +3913,7 @@
     "name": "waybillId",
     "required": true,
     "description": "Уникальный идентификатор входящей товароучетной накладной",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -3992,7 +3931,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -4159,7 +4098,7 @@
     "displayName": "Buyer Id",
     "name": "buyerId",
     "description": "Уникальный идентификатор получателя накладной",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "routing": {
       "send": {
@@ -4185,7 +4124,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -4203,7 +4142,7 @@
     "name": "waybillId",
     "required": true,
     "description": "Уникальный идентификатор расходной товароучетной накладной",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -4347,7 +4286,7 @@
     "name": "reservationId",
     "required": true,
     "description": "Уникальный идентификатор (GUID) бронирования",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -4434,7 +4373,7 @@
     "displayName": "Body",
     "name": "body",
     "type": "json",
-    "default": "{\n  \"ReservationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"Mark\": \"Example\"\n}",
+    "default": "{\n  \"ReservationId\": \"\",\n  \"Mark\": \"Example\"\n}",
     "routing": {
       "request": {
         "body": "={{ JSON.parse($value) }}"
@@ -4474,7 +4413,7 @@
     "name": "reservationId",
     "required": true,
     "description": "Уникальный идентификатор (GUID) бронирования",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -4528,7 +4467,7 @@
     "displayName": "Shop Id",
     "name": "ShopId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор торговой точки\n            ",
     "routing": {
       "send": {
@@ -4554,7 +4493,7 @@
     "displayName": "Reservation Id",
     "name": "ReservationId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор бронирования\n            ",
     "routing": {
       "send": {
@@ -4684,7 +4623,7 @@
     "displayName": "Positions",
     "name": "Positions",
     "type": "json",
-    "default": "[\n  {\n    \"PositionId\": \"00000000-0000-0000-0000-000000000000\",\n    \"IngredientId\": \"00000000-0000-0000-0000-000000000000\",\n    \"AlcCodes\": [\n      {\n        \"AlcCode\": \"Example\",\n        \"Ean\": \"Example\"\n      }\n    ],\n    \"Volume\": 0,\n    \"Price\": 0\n  }\n]",
+    "default": "[\n  {\n    \"PositionId\": \"\",\n    \"IngredientId\": \"\",\n    \"AlcCodes\": [\n      {\n        \"AlcCode\": \"Example\",\n        \"Ean\": \"Example\"\n      }\n    ],\n    \"Volume\": 0,\n    \"Price\": 0\n  }\n]",
     "description": "Список позиций для подбора марки, бронирования объема и регистрации продажи в УТМ\n            ",
     "routing": {
       "send": {
@@ -4728,7 +4667,7 @@
     "displayName": "Shop Id",
     "name": "ShopId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор торговой точки\n            ",
     "routing": {
       "send": {
@@ -4754,7 +4693,7 @@
     "displayName": "Reservation Id",
     "name": "ReservationId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор бронирования\n            ",
     "routing": {
       "send": {
@@ -4832,7 +4771,7 @@
     "displayName": "Positions",
     "name": "Positions",
     "type": "json",
-    "default": "[\n  {\n    \"PositionId\": \"00000000-0000-0000-0000-000000000000\",\n    \"IngredientId\": \"00000000-0000-0000-0000-000000000000\",\n    \"AlcCodes\": [\n      {\n        \"AlcCode\": \"Example\",\n        \"Ean\": \"Example\"\n      }\n    ],\n    \"Volume\": 0,\n    \"Price\": 0\n  }\n]",
+    "default": "[\n  {\n    \"PositionId\": \"\",\n    \"IngredientId\": \"\",\n    \"AlcCodes\": [\n      {\n        \"AlcCode\": \"Example\",\n        \"Ean\": \"Example\"\n      }\n    ],\n    \"Volume\": 0,\n    \"Price\": 0\n  }\n]",
     "description": "Список позиций для подбора марки, бронирования объема и добавления записи в журнал учета продаж\n            ",
     "routing": {
       "send": {
@@ -4858,7 +4797,7 @@
     "name": "shopId",
     "required": true,
     "description": "Уникальный идентификатор торговой точки",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "type": "string",
     "displayOptions": {
       "show": {
@@ -4875,7 +4814,7 @@
     "displayName": "Body",
     "name": "body",
     "type": "json",
-    "default": "{\n  \"ChequeId\": \"00000000-0000-0000-0000-000000000000\",\n  \"Mark\": \"Example\",\n  \"AlcCode\": \"Example\",\n  \"CloseTime\": \"0001-01-01T00:00:00\",\n  \"Quantity\": 0,\n  \"Price\": 0,\n  \"IsRegistered\": false\n}",
+    "default": "{\n  \"ChequeId\": \"\",\n  \"Mark\": \"Example\",\n  \"AlcCode\": \"Example\",\n  \"CloseTime\": \"0001-01-01T00:00:00\",\n  \"Quantity\": 0,\n  \"Price\": 0,\n  \"IsRegistered\": false\n}",
     "routing": {
       "request": {
         "body": "={{ JSON.parse($value) }}"
@@ -4915,7 +4854,7 @@
     "displayName": "Cheque Id",
     "name": "ChequeId",
     "type": "string",
-    "default": "00000000-0000-0000-0000-000000000000",
+    "default": "",
     "description": "Уникальный идентификатор чека. Обязательное поле",
     "routing": {
       "send": {
